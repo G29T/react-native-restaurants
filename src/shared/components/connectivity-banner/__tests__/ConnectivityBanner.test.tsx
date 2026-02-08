@@ -41,7 +41,7 @@ describe('ConnectivityBanner', () => {
     });
   });
 
-   describe('accessibility', () => {
+  describe('accessibility', () => {
     it('uses alert role when offline', () => {
       const { getByTestId } = render(<ConnectivityBanner online={false} colors={colors} />);
 
@@ -63,5 +63,5 @@ describe('ConnectivityBanner', () => {
         "You're back online. Globe view is available."
       );
     });
-   });
+  });
 });

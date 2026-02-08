@@ -65,7 +65,9 @@ export const ConnectivityBanner = ({ online, wasOffline, colors }: Props) => {
       return () => clearTimeout(timer);
     }
 
-    hide();
+    if (visible) {
+      hide();
+    }
   }, [online, wasOffline,show, hide]);
 
   if (!visible) return null;
