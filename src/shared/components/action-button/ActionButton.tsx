@@ -18,7 +18,7 @@ type ActionButtonProps = {
   testID?: string;
 };
 
-export function ActionButton({
+export const ActionButton = ({
   label,
   icon,
   iconSize = 22,
@@ -27,7 +27,7 @@ export function ActionButton({
   disabled = false,
   style,
   testID,
-}: ActionButtonProps) {
+}: ActionButtonProps) => {
   const { theme } = useTheme();
   const colors: Colors = useMemo(() => getColors(theme), [theme]);
 
