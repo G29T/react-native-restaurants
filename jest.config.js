@@ -11,6 +11,7 @@ module.exports = {
       '|@react-native-async-storage' +
       '|react-native-vector-icons' +
       '|react-native-webview' +
+      '|@react-navigation' +
       ')/)',
   ],
   verbose: true,
