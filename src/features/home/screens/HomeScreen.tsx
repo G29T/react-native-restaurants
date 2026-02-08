@@ -1,15 +1,15 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../types/navigation";
-import { useTheme } from "../../core/theme/context/ThemeProvider";
+import { RootStackParamList } from "../../../types/navigation";
+import { useTheme } from "../../../core/theme/context/ThemeProvider";
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { getColors } from "../../core/theme/colors";
+import { getColors } from "../../../core/theme/colors";
 import { useFocusEffect } from "@react-navigation/native";
-import { ActionButton } from "../../shared/components/action-button/ActionButton";
+import { ActionButton } from "../../../shared/components/action-button/ActionButton";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
-import { ConnectivityBanner } from "../../shared/components/connectivity-banner/ConnectivityBanner";
-import { Globe } from "../../shared/components/globe/Globe";
-import { useNetworkInfo } from "../../core/network/context/NetworkProvider";
-import { moderateScale, scale, scaleFont, verticalScale } from "../../shared/utils/scale";
+import { ConnectivityBanner } from "../../../shared/components/connectivity-banner/ConnectivityBanner";
+import { Globe } from "../components/globe/Globe";
+import { useNetworkInfo } from "../../../core/network/context/NetworkProvider";
+import { moderateScale, scale, scaleFont, verticalScale } from "../../../shared/utils/scale";
 
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 

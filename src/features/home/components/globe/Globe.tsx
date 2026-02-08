@@ -1,9 +1,9 @@
 import React, { useMemo, useCallback } from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
-import { COUNTRIES } from '../../constants/continents-countries'; 
-import { getColors } from '../../../core/theme/colors'; 
-import { useTheme } from '../../../core/theme/context/ThemeProvider';
+import { COUNTRIES } from '../../../../shared/constants/continents-countries'; 
+import { getColors } from '../../../../core/theme/colors'; 
+import { useTheme } from '../../../../core/theme/context/ThemeProvider';
 import { generateGlobeHtml } from './globeHtml';
 
 type GlobeProps = {

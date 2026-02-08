@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import * as colorsModule from '../../../../core/theme/colors';
-import { useTheme } from '../../../../core/theme/context/ThemeProvider';
+import * as colorsModule from '../../../../../core/theme/colors';
+import { useTheme } from '../../../../../core/theme/context/ThemeProvider';
 import { Globe } from '../Globe';
 import { generateGlobeHtml } from '../globeHtml';
 
@@ -16,11 +16,11 @@ jest.mock('react-native-webview', () => {
   };
 });
 
-jest.mock('../../../../core/theme/context/ThemeProvider', () => ({
+jest.mock('../../../../../core/theme/context/ThemeProvider', () => ({
   useTheme: jest.fn(),
 }));
 
-jest.mock('../../../../core/theme/colors', () => ({
+jest.mock('../../../../../core/theme/colors', () => ({
   getColors: jest.fn(),
 }));
 
@@ -28,7 +28,7 @@ jest.mock('../globeHtml', () => ({
   generateGlobeHtml: jest.fn(),
 }));
 
-jest.mock('../../../constants/continents-countries', () => ({
+jest.mock('../../../../../shared/constants/continents-countries', () => ({
   COUNTRIES: [
     { id: 'UK', label: 'United Kingdom', lat: 55.3781, lng: -3.436 },
   ],

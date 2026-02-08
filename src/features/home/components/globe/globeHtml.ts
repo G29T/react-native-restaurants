@@ -1,4 +1,4 @@
-import { Country } from '../../constants/continents-countries';
+import { Country } from '../../../../shared/constants/continents-countries';
 
 // Function to generate HTML string for WebView
 export const generateGlobeHtml = (theme: 'light' | 'dark', backgroundColor: string, countries: Country[]) => `

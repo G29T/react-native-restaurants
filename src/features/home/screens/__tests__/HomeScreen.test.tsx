@@ -1,15 +1,15 @@
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react-native';
 import HomeScreen from '../HomeScreen';
-import { useTheme } from '../../../core/theme/context/ThemeProvider';
-import { useNetworkInfo } from '../../../core/network/context/NetworkProvider';
+import { useTheme } from '../../../../core/theme/context/ThemeProvider';
+import { useNetworkInfo } from '../../../../core/network/context/NetworkProvider';
 
-jest.mock('../../../core/network/state/networkState', () => ({
+jest.mock('../../../../core/network/state/networkState', () => ({
   subscribeToNetwork: jest.fn(),
   forceNetworkStatus: jest.fn(),
 }));
 
-jest.mock('../../../core/network/context/NetworkProvider', () => ({
+jest.mock('../../../../core/network/context/NetworkProvider', () => ({
   useNetworkInfo: jest.fn(),
 }));
 
@@ -21,11 +21,11 @@ jest.mock('@react-navigation/native', () => {
   };
 });
 
-jest.mock('../../../core/theme/context/ThemeProvider', () => ({
+jest.mock('../../../../core/theme/context/ThemeProvider', () => ({
   useTheme: jest.fn(() => ({ theme: 'light' })),
 }));
 
-jest.mock('../../../shared/components/action-button/ActionButton', () => {
+jest.mock('../../../../shared/components/action-button/ActionButton', () => {
   const React = require('react');
   const { Pressable, Text } = require('react-native');
   return {
@@ -38,7 +38,7 @@ jest.mock('../../../shared/components/action-button/ActionButton', () => {
   };
 });
 
-jest.mock('../../../shared/components/globe/Globe', () => {
+jest.mock('../../components/globe/Globe', () => {
   const React = require('react');
   const { Pressable, Text } = require('react-native');
 
@@ -60,7 +60,7 @@ jest.mock('../../../shared/components/globe/Globe', () => {
   };
 });
 
-jest.mock('../../restaurants/screens/RestaurantListScreen', () => {
+jest.mock('../../../restaurants/screens/RestaurantListScreen', () => {
   const React = require('react');
   const { Text } = require('react-native');
   return () => React.createElement(Text, null, 'Restaurant List');
