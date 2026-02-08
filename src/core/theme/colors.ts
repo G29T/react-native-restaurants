@@ -20,5 +20,7 @@ export const darkColors = {
   subtle: '#9ca3af',     
 };
 
+export type Colors = typeof lightColors;
+
 export const getColors = (theme: 'light' | 'dark') =>
   theme === 'light' ? lightColors : darkColors;

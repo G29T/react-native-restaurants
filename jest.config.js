@@ -9,6 +9,7 @@ module.exports = {
     'node_modules/(?!(react-native' +
       '|@react-native' +
       '|@react-native-async-storage' +
+      '|react-native-vector-icons' +
       ')/)',
   ],
   verbose: true,
