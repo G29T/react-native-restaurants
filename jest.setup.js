@@ -27,3 +27,11 @@ jest.mock('react-native-webview', () => {
     WebView: props => React.createElement(View, props),
   };
 });
+
+jest.mock('@react-native-community/netinfo', () => ({
+  fetch: jest.fn(() => Promise.resolve({ isConnected: true })),
+  addEventListener: jest.fn(() => jest.fn()),
+  useNetInfo: jest.fn(() => ({
+    isConnected: true,
+  })),
+}));
