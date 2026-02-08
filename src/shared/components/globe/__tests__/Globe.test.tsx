@@ -145,4 +145,17 @@ describe('WebView based interactive globe', () => {
       expect.any(Array)
     );
   });
+
+  it('has correct accessibility role and label', () => {
+    const { getByTestId } = render(
+      <Globe
+        onSelectCountry={jest.fn()}
+        onDisplayed={jest.fn()}
+      />
+    );
+
+    const globe = getByTestId('globe-container');
+    expect(globe.props.accessibilityRole).toBe('image');
+    expect(globe.props.accessibilityLabel).toBe('Interactive globe');
+  });
 });
