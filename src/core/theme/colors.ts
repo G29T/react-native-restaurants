@@ -7,6 +7,14 @@ export const lightColors = {
   accent: '#2563eb',     
   onAccent: '#fff',   
   subtle: '#6b7280',     
+  
+  bannerWarningBg: '#FFF7ED',     
+  bannerWarningText: '#7C2D12', 
+  bannerWarningBorder: '#FED7AA',
+
+  bannerInfoBg: '#F1F5F9',     
+  bannerInfoText: '#1E3A8A',    
+  bannerInfoBorder: '#CBD5E1',   
 };
 
 export const darkColors = {
@@ -18,6 +26,14 @@ export const darkColors = {
   accent: '#1b3897',  
   onAccent: '#fff',     
   subtle: '#9ca3af',     
+
+  bannerWarningBg: '#1F2933',
+  bannerWarningText: '#927e2d',
+  bannerWarningBorder: '#4B5563',
+
+  bannerInfoBg: '#111827',
+  bannerInfoText: '#93C5FD',
+  bannerInfoBorder: '#374151',
 };
 
 export type Colors = typeof lightColors;
