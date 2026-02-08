@@ -19,3 +19,11 @@ jest.mock('react-native-vector-icons/Ionicons', () => 'Icon');
 jest.mock('react-native-haptic-feedback', () => ({
   trigger: jest.fn(),
 }));
+
+jest.mock('react-native-webview', () => {
+  const React = require('react');
+  const { View } = require('react-native');
+  return {
+    WebView: props => React.createElement(View, props),
+  };
+});
