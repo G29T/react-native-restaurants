@@ -44,7 +44,7 @@ export default function RootNavigator() {
         }}
       >
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="RestaurantList" component={RestaurantListScreen} />
+        <Stack.Screen name="RestaurantList" component={RestaurantListScreen} options={{ title: "Nando's Restaurants" }} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
