@@ -127,6 +127,15 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
           </View>
         )}
 
+        <View style={styles.globeMessageContainer}>
+          <Text 
+            testID="instruction-message" 
+            style={[styles.globeMessageText, { color: colors.textSecondary }]}
+          >
+            Select a country on the globe or press "View List" to see restaurants.
+          </Text>
+        </View>
+
         {isDeviceOnline ? (
           <Globe
             renderToken={globeRenderToken} 
@@ -178,6 +187,15 @@ const styles = StyleSheet.create({
   loadingText: {
     marginTop: verticalScale(12),
     fontSize: scaleFont(14),
+  },
+  globeMessageContainer: {
+    padding: scale(16),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  globeMessageText: {
+    fontSize: scaleFont(14),
+    textAlign: 'center',
   },
   offlineMessage: {
     padding: scale(16),

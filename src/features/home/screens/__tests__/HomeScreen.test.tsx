@@ -113,6 +113,14 @@ describe('HomeScreen', () => {
 
       expect(props.navigation.navigate).toHaveBeenCalledWith('RestaurantList', { selectedCountry: 'UK'});
     });
+
+    it('displays the instruction message', () => {
+      const props = createScreenProps();
+      const { getByText } = render(<HomeScreen {...props} />);
+
+      expect(getByText(/Select a country on the globe or press "View List" to see restaurants./i)).toBeTruthy();
+    });
+
   });
 
   describe('Globe', () => {
@@ -131,7 +139,7 @@ describe('HomeScreen', () => {
 
       fireEvent.press(getByTestId('globe-container'));
       act(() => {
-        jest.advanceTimersByTime(1000);
+        jest.advanceTimersByTime(2000);
       });
 
       expect(queryByText('Loading globe…')).toBeNull();
@@ -187,7 +195,7 @@ describe('HomeScreen', () => {
       const { getByTestId, getByText } = render(<HomeScreen {...props} />);
 
       expect(getByTestId('connectivity-banner')).toBeTruthy();
-      expect(getByText("You're offline. Globe view and some features are unavailable.")).toBeTruthy();
+      expect(getByText("You're offline. Globe view is unavailable.")).toBeTruthy();
     });
     
     it('renders back online banner when device was offline and comes back online', () => {
