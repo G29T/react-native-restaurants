@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler/jestSetup';
+
 afterAll(() => {
   jest.restoreAllMocks();
 });
