@@ -1,6 +1,6 @@
 export const lightColors = {
   background: '#f2f4f6', 
-  surface: '#f0f0f3',     
+  surface: '#e6e6e6',    
   textPrimary: '#1c1c1e', 
   textSecondary: '#4b5563',
   border: '#d1d5db',       
@@ -19,7 +19,7 @@ export const lightColors = {
 
 export const darkColors = {
   background: '#121212',  
-  surface: '#1e1e1e',     
+  surface: '#2c2c2c',     
   textPrimary: '#f5f5f5', 
   textSecondary: '#9ca3af', 
   border: '#2a2a2a',     
