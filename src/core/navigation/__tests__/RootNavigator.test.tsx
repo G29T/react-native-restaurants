@@ -3,7 +3,7 @@ import { render } from '@testing-library/react-native';
 import RootNavigator from '../RootNavigator';
 import * as ThemeHook from '../../theme/context/ThemeProvider';
 
-jest.mock('../../../features/home/HomeScreen', () => {
+jest.mock('../../../features/home/screens/HomeScreen', () => {
   const React = require('react'); 
   const { Text } = require('react-native'); 
 

@@ -51,7 +51,7 @@ export const ConnectivityBanner = ({ online, wasOffline, colors }: Props) => {
     if (!online) {
       show();
       AccessibilityInfo.announceForAccessibility(
-        "You're offline. Globe view and some features are unavailable."
+        "You're offline. Globe view is unavailable."
       );
 
       return;
@@ -88,7 +88,7 @@ export const ConnectivityBanner = ({ online, wasOffline, colors }: Props) => {
         ]}
       >
         <Text style={[styles.text, { color: colors.bannerWarningText }]}>
-          You're offline. Globe view and some features are unavailable.
+          You're offline. Globe view is unavailable.
         </Text>
       </Animated.View>
     );

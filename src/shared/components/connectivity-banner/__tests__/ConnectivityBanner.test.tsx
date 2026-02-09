@@ -52,7 +52,7 @@ describe('ConnectivityBanner', () => {
       render(<ConnectivityBanner online={false} colors={colors} />);
 
       expect(AccessibilityInfo.announceForAccessibility).toHaveBeenLastCalledWith(
-        "You're offline. Globe view and some features are unavailable."
+        "You're offline. Globe view is unavailable."
       );
     });
 

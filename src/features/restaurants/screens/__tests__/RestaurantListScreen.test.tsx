@@ -181,7 +181,7 @@ describe('RestaurantListScreen', () => {
       renderScreen();   
 
       expect(screen.getByTestId('connectivity-banner')).toBeTruthy();
-      expect(screen.getByText("You're offline. Globe view and some features are unavailable.")).toBeTruthy();
+      expect(screen.getByText("You're offline. Globe view is unavailable.")).toBeTruthy();
     });
 
     it('renders back online banner when device was offline and comes back online', () => {
@@ -209,7 +209,7 @@ describe('RestaurantListScreen', () => {
       mockUseNetworkInfo(true, false);
 
       renderScreen();
-      
+
       expect(screen.queryByTestId('connectivity-banner')).toBeNull();
     });
   });
