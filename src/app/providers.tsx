@@ -10,14 +10,14 @@ type ProvidersProps = {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaProvider>
-        <NetworkProvider>
-          <ThemeProvider>
+    <ThemeProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <SafeAreaProvider>
+          <NetworkProvider>
             {children}
-          </ThemeProvider>
-        </NetworkProvider>
-      </SafeAreaProvider>
-    </GestureHandlerRootView>
+          </NetworkProvider>
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
+    </ThemeProvider>
   );
 }
