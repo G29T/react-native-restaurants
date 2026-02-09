@@ -5,11 +5,13 @@ import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { getColors } from "../../../core/theme/colors";
 import { useFocusEffect } from "@react-navigation/native";
 import { ActionButton } from "../../../shared/components/action-button/ActionButton";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
 import { ConnectivityBanner } from "../../../shared/components/connectivity-banner/ConnectivityBanner";
 import { Globe } from "../components/globe/Globe";
 import { useNetworkInfo } from "../../../core/network/context/NetworkProvider";
 import { moderateScale, scale, scaleFont, verticalScale } from "../../../shared/utils/scale";
+import { E2E_ENABLED } from "../../../core/env/e2e";
+import { forceNetworkStatus } from "../../../core/network/state/networkState";
 
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
@@ -61,11 +63,33 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
     hideLoaderTimer.current = setTimeout(() => {
       setGlobeLoading(false);
-    }, 1000);
+    }, 2000);
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
+      
+      { E2E_ENABLED && (
+        <>
+          <View pointerEvents="none"/>
+          <Pressable
+            testID="force-online"
+            onPress={() => forceNetworkStatus(true)}
+            style={[styles.debugButton, { backgroundColor: '#269a41' }]}
+          >
+            <Text style={styles.debugText}>Force Online</Text>
+          </Pressable>
+
+          <Pressable
+            testID="force-offline"
+            onPress={() => forceNetworkStatus(false)}
+            style={[styles.debugButton, { backgroundColor: '#cd3040' }]}
+          >
+            <Text style={styles.debugText}>Force Offline</Text>
+          </Pressable>
+        </>
+      )}
+      
       <ConnectivityBanner online={isDeviceOnline} wasOffline={wasDeviceOffline} colors={colors} />
       
       <ActionButton
@@ -119,6 +143,18 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
               Globe is not available while offline. Please switch to List via View List button to see restaurants.
             </Text>
           </View>
+        )}
+
+        {E2E_ENABLED && (
+          <Pressable
+            testID="dev-select-Singapore"
+            onPress={() =>
+              navigation.navigate('RestaurantList', {
+                selectedCountry: 'Singapore',
+              })
+            }
+            style={styles.e2eSelectButton}
+          />
         )}
       </View>
     </View>
