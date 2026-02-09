@@ -1,0 +1,47 @@
+appId: com.restaurants
+---
+- launchApp
+
+- tapOn:
+    id: 'force-online'
+    optional: true
+
+- assertVisible:
+    id: 'go-to-list'
+
+- tapOn:
+    id: 'go-to-list'
+
+- assertVisible:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'filter-country'
+
+- tapOn:
+    id: 'filter-continent'
+
+- tapOn:
+    id: 'modal-option-Europe'
+
+- tapOn:
+    id: 'filter-country'
+
+- tapOn:
+    id: 'modal-option-ireland'
+
+- assertVisible:
+    id: 'restaurant-list'
+
+# Relaunch app
+- launchApp
+
+# App still usable
+- tapOn:
+    id: 'go-to-list'
+
+- assertVisible:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'filter-country'

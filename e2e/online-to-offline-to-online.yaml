@@ -1,0 +1,163 @@
+# ONLINE to OFFLINE to ONLINE
+
+appId: com.restaurants
+---
+- launchApp
+
+# ONLINE
+# Force online mode if E2E_ENABLED
+- tapOn:
+    id: 'force-online'
+    optional: true
+
+- tapOn:
+    id: 'go-to-list'
+
+- assertVisible:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'filter-country'
+
+- tapOn:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'modal-title'
+
+- tapOn:
+    id: 'modal-option-Europe'
+
+- tapOn:
+    id: 'filter-country'
+
+- assertVisible:
+    id: 'modal-title'
+
+- tapOn:
+    id: 'modal-option-UK'
+
+- assertVisible:
+    id: 'restaurant-list'
+
+- assertVisible:
+    id: 'restaurant-card-0'
+
+- assertVisible:
+    id: 'restaurant-card-0-name'
+
+- assertVisible:
+    id: 'restaurant-card-0-street'
+
+- assertVisible:
+    id: 'restaurant-card-0-postal-code'
+
+- back
+
+- tapOn:
+    id: 'header-settings'
+
+- tapOn:
+    id: 'settings-dark'
+
+- tapOn:
+    id: 'settings-light'
+
+- tapOn:
+    id: 'settings-system'
+
+- back
+
+# OFFLINE
+# Force offline mode if E2E_ENABLED
+- tapOn:
+    id: 'force-offline'
+    optional: true
+
+- tapOn:
+    id: 'go-to-list'
+
+- assertVisible:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'filter-country'
+
+- assertVisible:
+    id: 'restaurant-list'
+
+- tapOn:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'modal-title'
+
+- tapOn:
+    id: 'modal-option-Europe'
+
+- tapOn:
+    id: 'filter-country'
+
+- assertVisible:
+    id: 'modal-title'
+
+- tapOn:
+    id: 'modal-option-UK'
+
+- assertVisible:
+    id: 'restaurant-list'
+
+- assertVisible:
+    id: 'restaurant-card-0'
+
+- back
+
+- tapOn:
+    id: 'header-settings'
+
+- tapOn:
+    id: 'settings-dark'
+
+- tapOn:
+    id: 'settings-light'
+
+- tapOn:
+    id: 'settings-system'
+
+- back
+
+# BACK ONLINE
+# Force online mode if E2E_ENABLED
+- tapOn:
+    id: 'force-online'
+    optional: true
+
+- tapOn:
+    id: 'go-to-list'
+
+# RELAUNCH
+- launchApp
+
+- tapOn:
+    id: 'go-to-list'
+
+- assertVisible:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'filter-country'
+
+- tapOn:
+    id: 'filter-continent'
+
+- tapOn:
+    id: 'modal-option-Europe'
+
+- tapOn:
+    id: 'filter-country'
+
+- tapOn:
+    id: 'modal-option-ireland'
+
+- assertVisible:
+    id: 'restaurant-list'

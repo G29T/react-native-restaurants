@@ -1,0 +1,81 @@
+# ONLINE FLOW
+appId: com.restaurants
+---
+- launchApp
+
+# Force online mode if E2E_ENABLED
+- tapOn:
+    id: 'force-online'
+    optional: true
+
+- assertVisible:
+    id: 'go-to-list'
+
+- tapOn:
+    id: 'go-to-list'
+
+- assertVisible:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'filter-country'
+
+- tapOn:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'modal-title'
+
+- tapOn:
+    id: 'modal-option-Europe'
+
+- tapOn:
+    id: 'filter-country'
+
+- assertVisible:
+    id: 'modal-title'
+
+- tapOn:
+    id: 'modal-option-UK'
+
+- assertVisible:
+    id: 'restaurant-list'
+
+- assertVisible:
+    id: 'restaurant-card-0'
+
+- assertVisible:
+    id: 'restaurant-card-0-name'
+
+- assertVisible:
+    id: 'restaurant-card-0-street'
+
+- assertVisible:
+    id: 'restaurant-card-0-postal-code'
+
+- back
+
+- tapOn:
+    id: 'header-settings'
+
+- tapOn:
+    id: 'settings-dark'
+
+- tapOn:
+    id: 'settings-light'
+
+- tapOn:
+    id: 'settings-system'
+
+- back
+
+- tapOn:
+    id: 'dev-select-Singapore'
+
+- assertVisible:
+    id: 'restaurant-list'
+
+- assertVisible:
+    id: 'country-Singapore'
+
+- back

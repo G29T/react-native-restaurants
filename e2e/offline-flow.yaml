@@ -1,0 +1,65 @@
+# OFFLINE FLOW
+appId: com.restaurants
+---
+- launchApp
+
+# Force offline mode if E2E_ENABLED
+- tapOn:
+    id: 'force-offline'
+    optional: true
+
+- repeat:
+    times: 5
+    commands:
+      - assertVisible:
+          id: 'connectivity-banner'
+          optional: true
+
+- tapOn:
+    id: 'go-to-list'
+
+- assertVisible:
+    id: 'filter-continent'
+- assertVisible:
+    id: 'filter-country'
+- assertVisible:
+    id: 'restaurant-list'
+
+- tapOn:
+    id: 'filter-continent'
+
+- assertVisible:
+    id: 'modal-title'
+- tapOn:
+    id: 'modal-option-Europe'
+
+- tapOn:
+    id: 'filter-country'
+
+- assertVisible:
+    id: 'modal-title'
+
+- tapOn:
+    id: 'modal-option-UK'
+
+- assertVisible:
+    id: 'restaurant-list'
+
+- assertVisible:
+    id: 'restaurant-card-0'
+
+- back
+
+- tapOn:
+    id: 'header-settings'
+
+- tapOn:
+    id: 'settings-dark'
+
+- tapOn:
+    id: 'settings-light'
+
+- tapOn:
+    id: 'settings-system'
+
+- back
