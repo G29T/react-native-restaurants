@@ -77,7 +77,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
             onPress={() => forceNetworkStatus(true)}
             style={[styles.debugButton, { backgroundColor: '#269a41' }]}
           >
-            <Text style={styles.debugText}>Force Online</Text>
+            <Text style={styles.debugText}>Force Online (Visible only in DEV)</Text>
           </Pressable>
 
           <Pressable
@@ -85,26 +85,31 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
             onPress={() => forceNetworkStatus(false)}
             style={[styles.debugButton, { backgroundColor: '#cd3040' }]}
           >
-            <Text style={styles.debugText}>Force Offline</Text>
+            <Text style={styles.debugText}>Force Offline(Visible only in DEV)</Text>
           </Pressable>
         </>
       )}
       
       <ConnectivityBanner online={isDeviceOnline} wasOffline={wasDeviceOffline} colors={colors} />
       
-      <ActionButton
-        label="View list"
-        icon="list-outline"
-        iconSize={moderateScale(22)}
-        testID="go-to-list"
-        onPress={() => navigation.navigate('RestaurantList', {})}
-        style={{
-          position: 'absolute',
-          top: scale(12),
-          right: scale(12),
-          zIndex: 15
-        }}
-      />
+     <View style={styles.globeMessageContainer}>
+        <View style={styles.viewListButtonRow}>
+          <ActionButton
+            label="View list"
+            icon="list-outline"
+            iconSize={moderateScale(20)}
+            testID="go-to-list"
+            onPress={() => navigation.navigate('RestaurantList', {})}
+          />
+        </View>
+
+        <Text
+          testID="instruction-message"
+          style={[styles.globeMessageText, { color: colors.textSecondary }]}
+        >
+          Select a country on the globe or press "View List" to see restaurants.
+        </Text>
+      </View>
 
       <View style={styles.globeContainer}>
         {isDeviceOnline && globeLoading && (
@@ -126,15 +131,6 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
             </Text>
           </View>
         )}
-
-        <View style={styles.globeMessageContainer}>
-          <Text 
-            testID="instruction-message" 
-            style={[styles.globeMessageText, { color: colors.textSecondary }]}
-          >
-            Select a country on the globe or press "View List" to see restaurants.
-          </Text>
-        </View>
 
         {isDeviceOnline ? (
           <Globe
@@ -189,9 +185,13 @@ const styles = StyleSheet.create({
     fontSize: scaleFont(14),
   },
   globeMessageContainer: {
-    padding: scale(16),
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingHorizontal: scale(16),
+    paddingTop: verticalScale(12),
+  },
+  viewListButtonRow: {
+    width: '100%',
+    alignItems: 'flex-end',
+    marginBottom: verticalScale(16),
   },
   globeMessageText: {
     fontSize: scaleFont(14),
