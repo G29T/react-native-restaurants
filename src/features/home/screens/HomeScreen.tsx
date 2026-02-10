@@ -69,7 +69,8 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
       
-      { E2E_ENABLED && (
+      {/* TO DO: Uncomment/Enable when running E2E tests */}
+      {/* { E2E_ENABLED && (
         <>
           <View pointerEvents="none"/>
           <Pressable
@@ -88,7 +89,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
             <Text style={styles.debugText}>Force Offline(Visible only in DEV)</Text>
           </Pressable>
         </>
-      )}
+      )} */}
       
       <ConnectivityBanner online={isDeviceOnline} wasOffline={wasDeviceOffline} colors={colors} />
       
@@ -107,7 +108,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
           testID="instruction-message"
           style={[styles.globeMessageText, { color: colors.textSecondary }]}
         >
-          Select a country on the globe or press "View List" to see restaurants.
+          Select a country label on the globe or press "View List" to see restaurants.
         </Text>
       </View>
 
@@ -150,7 +151,8 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
           </View>
         )}
 
-        {E2E_ENABLED && (
+      {/* TO DO: Uncomment/Enable when running E2E tests */}
+        {/* {E2E_ENABLED && (
           <Pressable
             testID="dev-select-Singapore"
             onPress={() =>
@@ -160,7 +162,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
             }
             style={styles.e2eSelectButton}
           />
-        )}
+        )} */}
       </View>
     </View>
   );

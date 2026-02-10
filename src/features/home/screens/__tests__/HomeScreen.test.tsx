@@ -118,7 +118,7 @@ describe('HomeScreen', () => {
       const props = createScreenProps();
       const { getByText } = render(<HomeScreen {...props} />);
 
-      expect(getByText(/Select a country on the globe or press "View List" to see restaurants./i)).toBeTruthy();
+      expect(getByText(/Select a country label on the globe or press "View List" to see restaurants./i)).toBeTruthy();
     });
 
   });
