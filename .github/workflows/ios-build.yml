@@ -1,0 +1,49 @@
+name: iOS Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cache node_modules & CocoaPods
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            ios/Pods
+          key: ${{ runner.os }}-build-${{ hashFiles('yarn.lock') }}
+
+      - name: Install JS dependencies
+        run: yarn install
+
+      - name: Install CocoaPods
+        run: |
+          cd ios
+          pod install
+
+      - name: Build iOS app
+        run: |
+          cd ios
+          xcodebuild \
+            -workspace Restaurants.xcworkspace \
+            -scheme Restaurants \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -derivedDataPath build
+
+      - name: Run Jest tests
+        run: yarn test
