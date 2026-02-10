@@ -55,6 +55,12 @@ describe('SettingsScreen', () => {
 
       expect(queryAllByTestId('selected-icon')).toHaveLength(1);
     });
+
+    it('renders app version', () => {
+      const { getByTestId } = render(<SettingsScreen />);
+
+      expect(getByTestId('app-version')).toBeTruthy();
+    });
   });
 
   describe('accessibility', () => {

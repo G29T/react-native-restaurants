@@ -65,7 +65,10 @@ export default function SettingsScreen() {
           </Pressable>
         );
       })}
-      <View style={styles.versionContainer}>
+      <View 
+        testID="app-version"
+        style={styles.versionContainer}
+      >
         <View style={styles.versionRow}>
           <Text style={[styles.versionLabel, { color: colors.textSecondary }]}>
             Version
