@@ -1,14 +1,20 @@
 import { View, Pressable, Text, StyleSheet } from 'react-native';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTheme } from '../../core/theme/context/ThemeProvider';
 import { getColors } from '../../core/theme/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { moderateScale, scale, scaleFont } from '../../shared/utils/scale';
 import HapticFeedback from 'react-native-haptic-feedback';
+import { getAppVersion } from '../../core/config/getAppVersion';
 
 export default function SettingsScreen() {
   const { selectedTheme, setSelectedTheme, theme } = useTheme();
   const colors = useMemo(() => getColors(theme), [theme]);
+  const [appVersion, setAppVersion] = useState<string>('—');
+
+  useEffect(() => {
+    getAppVersion().then(setAppVersion);
+  }, []);
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -59,6 +65,16 @@ export default function SettingsScreen() {
           </Pressable>
         );
       })}
+      <View style={styles.versionContainer}>
+        <View style={styles.versionRow}>
+          <Text style={[styles.versionLabel, { color: colors.textSecondary }]}>
+            Version
+          </Text>
+          <Text style={[styles.versionValue, { color: colors.textSecondary }]}>
+            {appVersion}
+          </Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -81,5 +97,24 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: scaleFont(16),               
+  },
+  versionContainer: {
+    marginTop: 'auto',
+    alignItems: 'center',
+    paddingTop: scale(16),
+  },
+  versionRow: {
+    flexDirection: 'row',       
+    justifyContent: 'space-between',
+    width: '20%',              
+    alignItems: 'center',
+  },
+  versionLabel: {
+    fontSize: scaleFont(12),
+    opacity: 0.7,
+  },
+  versionValue: {
+    fontSize: scaleFont(12),
+    opacity: 0.7,
   },
 });
