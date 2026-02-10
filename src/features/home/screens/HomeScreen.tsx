@@ -104,12 +104,14 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
           />
         </View>
 
-        <Text
-          testID="instruction-message"
-          style={[styles.globeMessageText, { color: colors.textSecondary }]}
-        >
-          Select a country label on the globe or press "View List" to see restaurants.
-        </Text>
+        {isDeviceOnline && (
+          <Text
+            testID="instruction-message"
+            style={[styles.globeMessageText, { color: colors.textSecondary }]}
+          >
+            Select a country label on the globe or press "View List" to see restaurants.
+          </Text>
+        )}
       </View>
 
       <View style={styles.globeContainer}>
