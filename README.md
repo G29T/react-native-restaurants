@@ -449,29 +449,32 @@ Validated flows include:
 
 E2E tests are not included in CI builds because they can be slow and sometimes flaky due to async operations, network timing differences. Keeping them out of automated CI ensures fast, reliable builds while still allowing developers to run them manually for full app verification.
 
+<img src="assets/test-results/jest.png" width="200" alt="Jest test results" />
+<img src="assets/test-results/e2e.png" width="200" alt="E2E test results" />
+
 ### UI Images
 
-![Home Screen - Online](<assets\app-images\light-theme\Light 1.png>)
-![Home Screen - Online](<assets\app-images\light-theme\Light 2.png>)
-![Settings Screen](<assets\app-images\light-theme\Light 3.png>)
-![Restaurants Screen - Online](<assets\app-images\light-theme\Light 4.png>)
-![Country Modal](<assets\app-images\light-theme\Light 5.png>)
-![Continent Modal](<assets\app-images\light-theme\Light 6.png>)
-![Filtered Restaurants](<assets\app-images\light-theme\Light 7.png>)
-![Home Screen - Offline](<assets\app-images\light-theme\Light 8.png>)
-![Restaurants Screen - Offline](<assets\app-images\light-theme\Light 9.png>)
-![Restaurants visible when offline](<assets\app-images\light-theme\Light 10.png>)
-![Filtered Restaurants - Offline](<assets\app-images\light-theme\Light 11.png>)
-![Back online banner](<assets\app-images\light-theme\Light 12.png>)
+<img src="assets/app-images/light-theme/Light 1.png" width="200" alt="Home Screen - Online" />
+<img src="assets/app-images/light-theme/Light 2.png" width="200" alt="Home Screen - Online" />
+<img src="assets/app-images/light-theme/Light 3.png" width="200" alt="Settings Screen" />
+<img src="assets/app-images/light-theme/Light 4.png" width="200" alt="Restaurants Screen - Online" />
+<img src="assets/app-images/light-theme/Light 5.png" width="200" alt="Country Modal" />
+<img src="assets/app-images/light-theme/Light 6.png" width="200" alt="Continent Modal" />
+<img src="assets/app-images/light-theme/Light 7.png" width="200" alt="Filtered Restaurants" />
+<img src="assets/app-images/light-theme/Light 8.png" width="200" alt="Home Screen - Offline" />
+<img src="assets/app-images/light-theme/Light 9.png" width="200" alt="Restaurants Screen - Offline" />
+<img src="assets/app-images/light-theme/Light 10.png" width="200" alt="Restaurants visible when offline" />
+<img src="assets/app-images/light-theme/Light 11.png" width="200" alt="Filtered Restaurants - Offline" />
+<img src="assets/app-images/light-theme/Light 12.png" width="200" alt="Back online banner" />
 
-![Home Screen - Online](<assets\app-images\dark-theme\Dark 1.png>)
-![Settings Screen](<assets\app-images\dark-theme\Dark 2.png>)
-![Restaurants Screen - Online](<assets\app-images\dark-theme\Dark 3.png>)
-![Restaurants Screen - Online](<assets\app-images\dark-theme\Dark 4.png>)
-![Continent Modal](<assets\app-images\dark-theme\Dark 5.png>)
-![Country Modal](<assets\app-images\dark-theme\Dark 6.png>)
-![Filtered Restaurants](<assets\app-images\dark-theme\Dark 7.png>)
-![Filtered Restaurants](<assets\app-images\dark-theme\Dark 8.png>)
-![Home Screen - Offline](<assets\app-images\dark-theme\Dark 9.png>)
-![Restaurants Screen - Offline](<assets\app-images\dark-theme\Dark 10.png>)
-![Filtered Restaurants - Offline](<assets\app-images\dark-theme\Dark 11.png>)
+<img src="assets/app-images/dark-theme/Dark 1.png" width="200" alt="Home Screen - Online" />
+<img src="assets/app-images/dark-theme/Dark 2.png" width="200" alt="Settings Screen" />
+<img src="assets/app-images/dark-theme/Dark 3.png" width="200" alt="Restaurants Screen - Online" />
+<img src="assets/app-images/dark-theme/Dark 4.png" width="200" alt="Restaurants Screen - Online" />
+<img src="assets/app-images/dark-theme/Dark 5.png" width="200" alt="Continent Modal" />
+<img src="assets/app-images/dark-theme/Dark 6.png" width="200" alt="Country Modal" />
+<img src="assets/app-images/dark-theme/Dark 7.png" width="200" alt="Filtered Restaurants" />
+<img src="assets/app-images/dark-theme/Dark 8.png" width="200" alt="Filtered Restaurants" />
+<img src="assets/app-images/dark-theme/Dark 9.png" width="200" alt="Home Screen - Offline" />
+<img src="assets/app-images/dark-theme/Dark 10.png" width="200" alt="Restaurants Screen - Offline" />
+<img src="assets/app-images/dark-theme/Dark 11.png" width="200" alt="Filtered Restaurants - Offline" />
