@@ -405,7 +405,7 @@ In the future, internal errors can be routed to services without changing ap pli
 
 ### Native Module VS JSI
 
-After evaluating both Native Modules and JSI, a **Native Module is the more appropriate choice for fetching the app version** in this project.
+After evaluating both Native Modules and JSI, a **Native Module is the most appropriate choice for fetching the app version** in this project.
 
 The app version is read infrequently, never in tight loops, and there is no performance bottleneck to worry about. Introducing JSI would add unnecessary complexity, increase maintenance cost, and introduce potential stability risks, without providing any tangible benefit.
 Native Modules are a better fit for the current scenario because they are simple, reliable, and sufficient for low-frequency operations. The asynchronous nature of Native Modules is not a concern, as the delay is negligible and unnoticeable in the UI. JSI, while faster and synchronous, is designed for scenarios where JavaScript must interact with native code at very high frequency, which does not apply to reading a static app version.
@@ -451,27 +451,27 @@ E2E tests are not included in CI builds because they can be slow and sometimes f
 
 ### UI Images
 
-![Home Screen - Online](<Light 1.png>)
-![Home Screen - Online](<Light  2.png>)
-![Settings Screen](<Light 3.png>)
-![Restaurants Screen - Online](<Light  4.png>)
-![Country Modal](<Light 5.png>)
-![Continent Modal](<Light  6.png>)
-![Filtered Restaurants](<Light  7.png>)
-![Home Screen - Offline](<Light  8.png>)
-![Restaurants Screen - Offline](<Light  9.png>)
-![Restaurants visible when offline](<Light 10.png>)
-![Filtered Restaurants - Offline](<Light  11.png>)
-![Back online banner](<Light 12.png>)
+![Home Screen - Online](<assets\app-images\light-theme\Light 1.png>)
+![Home Screen - Online](<assets\app-images\light-theme\Light 2.png>)
+![Settings Screen](<assets\app-images\light-theme\Light 3.png>)
+![Restaurants Screen - Online](<assets\app-images\light-theme\Light 4.png>)
+![Country Modal](<assets\app-images\light-theme\Light 5.png>)
+![Continent Modal](<assets\app-images\light-theme\Light 6.png>)
+![Filtered Restaurants](<assets\app-images\light-theme\Light 7.png>)
+![Home Screen - Offline](<assets\app-images\light-theme\Light 8.png>)
+![Restaurants Screen - Offline](<assets\app-images\light-theme\Light 9.png>)
+![Restaurants visible when offline](<assets\app-images\light-theme\Light 10.png>)
+![Filtered Restaurants - Offline](<assets\app-images\light-theme\Light 11.png>)
+![Back online banner](<assets\app-images\light-theme\Light 12.png>)
 
-![Home Screen - Online](<Dark 1.png>)
-![Settings Screen](<Dark 2.png>)
-![Restaurants Screen - Online](<Dark 3.png>)
-![Restaurants Screen - Online](<Dark  4.png>)
-![Continent Modal](<Dark 5.png>)
-![Country Modal](<Dark  6.png>)
-![Filtered Restaurants](<Dark 7.png>)
-![Filtered Restaurants](<Dark 8.png>)
-![Home Screen - Offline](<Dark  9.png>)
-![Restaurants Screen - Offline](<Dark  10.png>)
-![Filtered Restaurants - Offline](<Dark 11.png>)
+![Home Screen - Online](<assets\app-images\dark-theme\Dark 1.png>)
+![Settings Screen](<assets\app-images\dark-theme\Dark 2.png>)
+![Restaurants Screen - Online](<assets\app-images\dark-theme\Dark 3.png>)
+![Restaurants Screen - Online](<assets\app-images\dark-theme\Dark 4.png>)
+![Continent Modal](<assets\app-images\dark-theme\Dark 5.png>)
+![Country Modal](<assets\app-images\dark-theme\Dark 6.png>)
+![Filtered Restaurants](<assets\app-images\dark-theme\Dark 7.png>)
+![Filtered Restaurants](<assets\app-images\dark-theme\Dark 8.png>)
+![Home Screen - Offline](<assets\app-images\dark-theme\Dark 9.png>)
+![Restaurants Screen - Offline](<assets\app-images\dark-theme\Dark 10.png>)
+![Filtered Restaurants - Offline](<assets\app-images\dark-theme\Dark 11.png>)
