@@ -69,6 +69,10 @@ export default function RestaurantListScreen({ route }: RestaurantListProps) {
     return Object.values(
       COUNTRIES.reduce<Record<string, ContinentSection>>((acc, c) => {
 
+        if (continent && CONTINENT_MAP[c.id] !== continent) {
+          return acc;
+        }
+
         if (country && c.id !== country) {
           return acc;
         }
@@ -89,7 +93,7 @@ export default function RestaurantListScreen({ route }: RestaurantListProps) {
         return acc;
       }, {})
     );
-  }, [country, restaurants]);
+  }, [continent, country, restaurants]);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
